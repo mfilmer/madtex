@@ -1,0 +1,15 @@
+\ProvidesPackage{madtex}
+
+\RequirePackage{tikz}
+
+\newlength\madlength\setlength\madlength{6em}
+\newlength\maddepth\setlength\maddepth{0.5ex}
+\newlength\madheight\setlength\madheight{0.2ex}
+
+\newcommand\madword[2][]{\rule[-2.5ex]{0pt}{\baselineskip}\tikz{\useasboundingbox (0.5\madlength,0) -- (-0.5\madlength,0);\draw (-0.5\madlength,0) -- (0.5\madlength,0); \node[anchor=north,inner sep=0,outer sep=0] at (0,-\maddepth) {\bfseries\itshape\scriptsize #2};\node[anchor=base,inner sep=0,outer sep=0] at (0,\madheight) {\itshape #1};}}
+
+\newcommand\mverb{\madword{verb}}
+\newcommand\mnoun{\madword{noun}}
+\newcommand\mpnoun{\madword{proper noun}}
+\newcommand\madjective{\madword{adjective}}
+\newcommand\madadverb{\madword{adverb}}
